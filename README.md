@@ -1,18 +1,40 @@
 mruby-WiringPi
 =========
 
-## install by mrbgems
- - add conf.gem line to `build_config.rb`
+## How to use
+ - checkout mruby
+
+```bash
+git clone https://github.com/mruby/mruby.git  # original mruby
+  # or
+git clone https://github.com/iij/mruby.git    # iij extended mruby (File, IO, Socket, ... extend)
+```
+
+  - edit `build_config.rb`
+
 ```ruby
 MRuby::Build.new do |conf|
 
     # ... (snip) ...
 
-    conf.gem :git => 'https://github.com/akiray03/mruby-WiringPi.git'
+    conf.gem :git => 'https://github.com/akiray03/mruby-WiringPi.git'  # add this line
 end
 ```
 
-## example
+ - build
+
+```bash
+ruby ./minirake
+```
+
+ - exec
+
+```bash
+./bin/mruby build/mrbgems/mruby-WiringPi/sample/sample.rb
+```
+
+## sample
+
 ```ruby
 io = WiringPi::GPIO.new
 io.write(pin,value)
