@@ -1,4 +1,4 @@
-mruby-digest
+mruby-WiringPi
 =========
 
 ## install by mrbgems
