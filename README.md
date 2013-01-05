@@ -30,7 +30,7 @@ ruby ./minirake
  - exec
 
 ```bash
-./bin/mruby build/mrbgems/mruby-WiringPi/sample/sample.rb
+sudo ./bin/mruby build/mrbgems/mruby-WiringPi/sample/sample.rb
 ```
 
 ## sample
