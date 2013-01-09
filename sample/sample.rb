@@ -1,6 +1,7 @@
 
 io = WiringPi::GPIO.new
 pin = 0
+io.mode(pin, WiringPi::OUTPUT)
 
 5.times do
   puts "pin:#{pin} set high"

@@ -8,17 +8,17 @@ module WiringPi
   WPI_MODE_SYS  = 2 # Use /sys/class/gpio method
 
   # Constants for mode()
-  INPUT = 0
-  OUTPUT = 1
-  PWM_OUTPUT = 2
+  INPUT = 'in'
+  OUTPUT = 'out'
+  PWM_OUTPUT = 'pwm'
 
   # Constants for digitalWrite()
   HIGH = 1
   LOW = 0
 
-  PUD_OFF = 0
-  PUD_DOWN = 1
-  PUD_UP = 2
+  PUD_OFF = 'tri'
+  PUD_DOWN = 'down'
+  PUD_UP = 'up'
 
   # Bit-order for shiftOut and shiftIn
   LSBFIRST = 0 # Least Significant Bit First
