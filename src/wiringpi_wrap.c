@@ -227,6 +227,11 @@ mrb_WiringPi_serialGetchar(mrb_state *mrb, mrb_value self)
 }
 
 void
+mrb_mruby_WiringPi_gem_final(mrb_state *mrb)
+{
+}
+
+void
 mrb_mruby_WiringPi_gem_init(mrb_state *mrb)
 {
   struct RClass *wpi;
