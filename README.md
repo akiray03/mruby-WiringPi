@@ -53,6 +53,10 @@ io.read(pin)
 
  - WiringPi::Serial is not tested...
 
+## TODO
+
+ - cross build support
+
 ## License
 This software is licensed under the same license terms of WiringPi (https://github.com/WiringPi/WiringPi).
 
