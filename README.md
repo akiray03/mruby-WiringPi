@@ -73,6 +73,8 @@ io.read(pin)
 
 ## sample (LCD)
 
+ - LCD control sample code for SC1602 http://akizukidenshi.com/catalog/g/gP-00038/
+
 | wiringPi | GPIO (Pin#) | Name   | LCD Port |
 |:--------:|:----:|:------:|:------:|
 |      0   |  17  | GPIO 0 |  DB0 |
