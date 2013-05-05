@@ -22,17 +22,8 @@ MRuby::Build.new do |conf|
 end
 ```
 
- - build
-
-```bash
-ruby ./minirake
-```
-
- - exec
-
-```bash
-sudo ./bin/mruby build/mrbgems/mruby-WiringPi/sample/sample.rb
-```
+ - build `ruby ./minirake`
+ - exec `sudo ./bin/mruby build/mrbgems/mruby-WiringPi/sample/sample.rb`
 
 ## Pin Mapping
 
@@ -82,7 +73,6 @@ io.read(pin)
 
 ## sample (LCD)
 
- - Pin connection
 | wiringPi | GPIO (Pin#) | Name   | LCD Port |
 |:--------:|:----:|:------:|:------:|
 |      0   |  17  | GPIO 0 |  DB0 |
@@ -95,8 +85,9 @@ io.read(pin)
 |      7   |   4  | GPIO 7 |  DB7 |
 |     12   |  10  | MOSI   | Enable |
 |     13   |   9  | MISO   | Register Select |
-   - The Read/Write pin must be connected to 0V/Ground.
- - sample code:
+
+ - The Read/Write pin must be connected to 0V/Ground.
+
 ```ruby
 lcd = LCD.new rows: 18, cols: 2, bits: 8, rs: 13, strb: 12, dpin: [0,1,2,3,4,5,6,7]
 
