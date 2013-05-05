@@ -18,6 +18,7 @@ MRuby::Build.new do |conf|
     # ... (snip) ...
 
     conf.gem :git => 'https://github.com/akiray03/mruby-WiringPi.git'  # add this line
+    conf.gem :git => 'https://github.com/matsumoto-r/mruby-sleep.git'  # add this line
 end
 ```
 
@@ -32,6 +33,32 @@ ruby ./minirake
 ```bash
 sudo ./bin/mruby build/mrbgems/mruby-WiringPi/sample/sample.rb
 ```
+
+## Pin Mapping
+
+| wiringPi | GPIO (Pin#) | Name   |
+|:--------:|:----:|:------:|
+|      0   |  17  | GPIO 0 |
+|      1   |  18  | GPIO 1 |
+|      2   |  27  | GPIO 2 |
+|      3   |  22  | GPIO 3 |
+|      4   |  23  | GPIO 4 |
+|      5   |  24  | GPIO 5 |
+|      6   |  25  | GPIO 6 |
+|      7   |   4  | GPIO 7 |
+|      8   |   2  | SDA    |
+|      9   |   3  | SCL    |
+|     10   |   8  | CE0    |
+|     11   |   7  | CE1    |
+|     12   |  10  | MOSI   |
+|     13   |   9  | MISO   |
+|     14   |  11  | SCLK   |
+|     15   |  14  | TxD    |
+|     16   |  15  | RxD    |
+|     17   |  28  | GPIO 8 |
+|     18   |  29  | GPIO 9 |
+|     19   |  30  | GPIO10 |
+|     20   |  31  | GPIO11 |
 
 ## sample
 
@@ -53,31 +80,32 @@ io.read(pin)
 
  - WiringPi::Serial is not tested...
 
-## Pin Mapping
+## sample (LCD)
 
-| wiringPi | GPIO (Pin#) | Name   |   
-|:--------:|:----:|:-------|
-|      0   |  17  | GPIO 0 |
-|      1   |  18  | GPIO 1 | 
-|      2   |  27  | GPIO 2 | 
-|      3   |  22  | GPIO 3 | 
-|      4   |  23  | GPIO 4 | 
-|      5   |  24  | GPIO 5 | 
-|      6   |  25  | GPIO 6 | 
-|      7   |   4  | GPIO 7 | 
-|      8   |   2  | SDA    |   
-|      9   |   3  | SCL    |   
-|     10   |   8  | CE0    |   
-|     11   |   7  | CE1    |   
-|     12   |  10  | MOSI   |   
-|     13   |   9  | MISO   |   
-|     14   |  11  | SCLK   |   
-|     15   |  14  | TxD    |   
-|     16   |  15  | RxD    |   
-|     17   |  28  | GPIO 8 | 
-|     18   |  29  | GPIO 9 | 
-|     19   |  30  | GPIO10 |
-|     20   |  31  | GPIO11 |
+ - Pin connection
+| wiringPi | GPIO (Pin#) | Name   | LCD Port |
+|:--------:|:----:|:------:|:------:|
+|      0   |  17  | GPIO 0 |  DB0 |
+|      1   |  18  | GPIO 1 |  DB1 |
+|      2   |  27  | GPIO 2 |  DB2 |
+|      3   |  22  | GPIO 3 |  DB3 |
+|      4   |  23  | GPIO 4 |  DB4 |
+|      5   |  24  | GPIO 5 |  DB5 |
+|      6   |  25  | GPIO 6 |  DB6 |
+|      7   |   4  | GPIO 7 |  DB7 |
+|     12   |  10  | MOSI   | Enable |
+|     13   |   9  | MISO   | Register Select |
+   - The Read/Write pin must be connected to 0V/Ground.
+ - sample code:
+```ruby
+lcd = LCD.new rows: 18, cols: 2, bits: 8, rs: 13, strb: 12, dpin: [0,1,2,3,4,5,6,7]
+
+lcd.lcd_pos 0, 0
+lcd.lcd_puts "Hello, mruby"
+lcd.lcd_pos 0, 1
+lcd.lcd_puts "Hi, Raspberry Pi"
+```
+
 
 ## TODO
 
