@@ -238,21 +238,21 @@ mrb_mruby_WiringPi_gem_init(mrb_state *mrb)
 
   wpi = mrb_define_class(mrb, "Wiringpi", mrb->object_class);
 
-  mrb_define_class_method(mrb, wpi, "wiringPiSetup",       mrb_WiringPi_Setup,        ARGS_NONE());
-  mrb_define_class_method(mrb, wpi, "wiringPiSetupSys",    mrb_WiringPi_SetupSys,     ARGS_NONE());
-  mrb_define_class_method(mrb, wpi, "wiringPiSetupGpio",   mrb_WiringPi_SetupGpio,    ARGS_NONE());
-  mrb_define_class_method(mrb, wpi, "wiringPiSetupPiFace", mrb_WiringPi_SetupPiFace,  ARGS_NONE());
-  mrb_define_class_method(mrb, wpi, "pinMode",             mrb_WiringPi_pinMode,      ARGS_REQ(2));
-  mrb_define_class_method(mrb, wpi, "digitalWrite",        mrb_WiringPi_digitalWrite, ARGS_REQ(2));
-  mrb_define_class_method(mrb, wpi, "digitalRead",         mrb_WiringPi_digitalRead,  ARGS_REQ(1));
-  mrb_define_class_method(mrb, wpi, "pwmWrite",            mrb_WiringPi_pwmWrite,     ARGS_REQ(2));
+  mrb_define_class_method(mrb, wpi, "wiringPiSetup",       mrb_WiringPi_Setup,        MRB_ARGS_NONE());
+  mrb_define_class_method(mrb, wpi, "wiringPiSetupSys",    mrb_WiringPi_SetupSys,     MRB_ARGS_NONE());
+  mrb_define_class_method(mrb, wpi, "wiringPiSetupGpio",   mrb_WiringPi_SetupGpio,    MRB_ARGS_NONE());
+  mrb_define_class_method(mrb, wpi, "wiringPiSetupPiFace", mrb_WiringPi_SetupPiFace,  MRB_ARGS_NONE());
+  mrb_define_class_method(mrb, wpi, "pinMode",             mrb_WiringPi_pinMode,      MRB_ARGS_REQ(2));
+  mrb_define_class_method(mrb, wpi, "digitalWrite",        mrb_WiringPi_digitalWrite, MRB_ARGS_REQ(2));
+  mrb_define_class_method(mrb, wpi, "digitalRead",         mrb_WiringPi_digitalRead,  MRB_ARGS_REQ(1));
+  mrb_define_class_method(mrb, wpi, "pwmWrite",            mrb_WiringPi_pwmWrite,     MRB_ARGS_REQ(2));
 
-  mrb_define_class_method(mrb, wpi, "serialOpen",        mrb_WiringPi_serialOpen,      ARGS_REQ(2));
-  mrb_define_class_method(mrb, wpi, "serialClose",       mrb_WiringPi_serialClose,     ARGS_REQ(1));
-  mrb_define_class_method(mrb, wpi, "serialPutchar",     mrb_WiringPi_serialPutchar,   ARGS_REQ(2));
-  mrb_define_class_method(mrb, wpi, "serialPuts",        mrb_WiringPi_serialPuts,      ARGS_REQ(2));
-  mrb_define_class_method(mrb, wpi, "serialPrintf",      mrb_WiringPi_serialPrintf,    ARGS_ANY());
-  mrb_define_class_method(mrb, wpi, "serialDataAvail",   mrb_WiringPi_serialDataAvail, ARGS_REQ(1));
-  mrb_define_class_method(mrb, wpi, "serialGetchar",     mrb_WiringPi_serialGetchar,   ARGS_REQ(1));
+  mrb_define_class_method(mrb, wpi, "serialOpen",        mrb_WiringPi_serialOpen,      MRB_ARGS_REQ(2));
+  mrb_define_class_method(mrb, wpi, "serialClose",       mrb_WiringPi_serialClose,     MRB_ARGS_REQ(1));
+  mrb_define_class_method(mrb, wpi, "serialPutchar",     mrb_WiringPi_serialPutchar,   MRB_ARGS_REQ(2));
+  mrb_define_class_method(mrb, wpi, "serialPuts",        mrb_WiringPi_serialPuts,      MRB_ARGS_REQ(2));
+  mrb_define_class_method(mrb, wpi, "serialPrintf",      mrb_WiringPi_serialPrintf,    MRB_ARGS_ANY());
+  mrb_define_class_method(mrb, wpi, "serialDataAvail",   mrb_WiringPi_serialDataAvail, MRB_ARGS_REQ(1));
+  mrb_define_class_method(mrb, wpi, "serialGetchar",     mrb_WiringPi_serialGetchar,   MRB_ARGS_REQ(1));
 
 }
