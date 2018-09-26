@@ -28,6 +28,8 @@
 #  define	FALSE	(1==2)
 #endif
 
+mrb_value mrb_str_format(mrb_state *, mrb_int, const mrb_value *, mrb_value);
+
 mrb_value
 mrb_WiringPi_Setup(mrb_state *mrb, mrb_value self)
 {
